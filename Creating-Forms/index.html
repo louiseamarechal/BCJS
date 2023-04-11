@@ -1,0 +1,48 @@
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.addEventListener('form')
+            form.addEventListener('submit', event => {
+                event.preventDefault() // avoid form submission to reload the page
+                alert('form submit event !')
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <form action="/test" method="POST" class="w-1/2 mx-auto mt-10 text-center">
+        <div>
+            <label class="block mb-3">Name</label>
+            <input
+                class="w-full p-2 mb-3 border border-gray-400 border-solid"
+                name="name"
+                id="name"
+                required />
+        </div>
+        <div>
+            <label class="block mb-3">Email Adress</label>
+            <input 
+                class="w-full p-2 mb-3 border border-gray-400 border-solid"
+                type="email"
+                name="email"
+                id="email"
+                required />
+        </div>
+        <div>
+            <label class="block mb-3">Notes</label>
+            <textarea 
+                class="w-full p-3 border border-gray-400" 
+                id="ntoes" rows="3" 
+                placeholder="Anything you want to tell us">
+            </textarea>
+        </div>
+        <div>
+            <button
+                type="submit"
+                class="p-3 pl-5 pr-5 mt-5 text-white bg-green-500 rounded-lg"
+            >Save</button>
+        </div>
+    </form>
+</body>
